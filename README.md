@@ -8,31 +8,33 @@
 
 ## 使用方法
 
-    import CanvasHelper from 'taro-canvas-helper'
-    const ctx  = Taro.createCanvasContext('canvasId')
-    const helper=new CanvasHelper({
-     ctx
-    })
-    helper.drawRect({
-        width: 750,
-    	height: baseHeight,
-    	x: 0,
-    	y: 0,
-    	bgColor: '#e63127',
-    	radius:10
-    })
-    helper.initText({
-    	fontSize: 28,
-    	color: '#e93629',
-    	text: currentDate,
-    	x: 227,
-    	y: 167,
-    	lineHeight: 43,
-    	textAlign: 'center',
-    	fontWeight: 'bold'
-    })
-    // 绘制完成必须调用draw方法
-    helper.draw()
+``` jsx
+import CanvasHelper from 'taro-canvas-helper';
+const ctx  = Taro.createCanvasContext('canvasId')
+const helper=new CanvasHelper({
+    ctx
+});
+helper.drawRect({
+    width: 750,
+    height: baseHeight,
+    x: 0,
+    y: 0,
+    bgColor: '#e63127',
+    radius:10
+});
+helper.initText({
+    fontSize: 28,
+    color: '#e93629',
+    text: currentDate,
+    x: 227,
+    y: 167,
+    lineHeight: 43,
+    textAlign: 'center',
+    fontWeight: 'bold'
+});
+// 绘制完成必须调用draw方法
+helper.draw();
+```
 
 ## API
 
@@ -40,14 +42,16 @@
 
 #### 功能：绘制图片
 
-    helper.drawImage({
-        width: 750,
-    	height: 100,
-    	x: 0,
-    	y: 0,
-    	url: '',
-    	radius:[10,20,30,10]
-    })
+``` jsx
+helper.drawImage({
+    width: 750,
+    height: 100,
+    x: 0,
+    y: 0,
+    url: '',
+    radius:[10,20,30,10]
+});
+```
 
 | 参数名 | 类型                                 | 介绍                                                     |
 | ------ | ------------------------------------ | -------------------------------------------------------- |
@@ -62,7 +66,9 @@
 
 #### 功能：加载单张图片
 
-    const path=await helper.loadImage(url)
+``` jsx
+const path=await helper.loadImage(url)
+```
 
 | 参数名 | 类型          | 介绍     |
 | ------ | ------------- | -------- |
@@ -72,7 +78,9 @@
 
 #### 功能：加载多张图片
 
-    const imgs=await helper.loadImgs([])
+``` jsx
+const imgs=await helper.loadImgs([])
+```
 
 | 参数名 | 类型            | 介绍         |
 | ------ | --------------- | ------------ |
@@ -82,14 +90,16 @@
 
 #### 功能：绘制矩形
 
-    helper.drawRect({
-        width: 750,
-    	height: 100,
-    	x: 0,
-    	y: 0,
-    	bgColor: '#e63127',
-    	radius:[10,20,30,10]
-    })
+``` jsx
+helper.drawRect({
+    width: 750,
+    height: 100,
+    x: 0,
+    y: 0,
+    bgColor: '#e63127',
+    radius:[10,20,30,10]
+})
+```
 
 | 参数名  | 类型                                 | 介绍     |
 | ------- | ------------------------------------ | -------- |
@@ -104,14 +114,16 @@
 
 #### 功能：绘制文本
 
-    helper.initText({
-    	text: '',
-    	x: 0,
-    	y: 0,
-    	color: '#fff',
-    	fontSize: 16,
-    	lineHeight: 26
-    })
+``` jsx
+helper.initText({
+    text: '',
+    x: 0,
+    y: 0,
+    color: '#fff',
+    fontSize: 16,
+    lineHeight: 26
+})
+```
 
 | 参数名     | 类型                                           | 介绍     |
 | ---------- | ---------------------------------------------- | -------- |
@@ -126,13 +138,15 @@
 
 ### breakText
 
-#### 功能：字体换行，超出以...结尾
+#### 功能：字体换行，超出以... 结尾
 
-    const strArr=helper.breakText({
-        str:'',
-        maxByteLength:10,
-        maxLine:1
-    })
+``` jsx
+const strArr=helper.breakText({
+    str:'',
+    maxByteLength:10,
+    maxLine:1
+})
+```
 
 | 参数名        | 类型          | 介绍                                             |
 | ------------- | ------------- | ------------------------------------------------ |
@@ -144,4 +158,6 @@
 
 #### 功能：完成绘制
 
-    helper.draw()
+``` jsx
+helper.draw()
+```
