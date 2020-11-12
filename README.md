@@ -72,7 +72,7 @@
 
 #### 功能：加载多张图片
 
-    const imgs=string[]=await helper.loadImgs([])
+    const imgs=await helper.loadImgs([])
 
 | 参数名 | 类型            | 介绍         |
 | ------ | --------------- | ------------ |
@@ -128,7 +128,7 @@
 
 #### 功能：字体换行，超出以...结尾
 
-    const strArr:string[]=helper.breakText({
+    const strArr=helper.breakText({
         str:'',
         maxByteLength:10,
         maxLine:1
