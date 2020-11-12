@@ -1,0 +1,24 @@
+{
+  "name": "taro-canvas-helper",
+  "version": "1.0.2",
+  "description": "基于Taro2.x的canvas绘制工具",
+  "main": "dist/core/index.js",
+  "types": "dist/core/index.d.ts",
+  "keywords": [
+    "taro微信小程序",
+    "canvas绘制工具"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bryce94",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.0.3",
+    "@tarojs/taro": "2.2.13"
+  },
+  "dependencies": {
+    "weapp-qrcode": "^1.0.0"
+  }
+}
