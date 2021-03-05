@@ -48,7 +48,7 @@ class CanvasHelper {
                 resolve(res.path);
             }
             catch (error) {
-                resolve("");
+                resolve('');
             }
         });
     }
@@ -145,16 +145,29 @@ class CanvasHelper {
      * @param textAlign 对齐方式
      *
      */
-    initText({ color, fontSize, fontWeight = "normal", lineHeight = fontSize, x, y, text, textAlign = "left", }) {
+    initText({ color, fontSize, fontWeight = 'normal', lineHeight = fontSize, x, y, text, textAlign = 'left', textDecoration = 'none', }) {
         this.ctx.save();
         this.ctx.beginPath();
         this.ctx.setFillStyle(color);
         this.ctx.font = `normal ${fontWeight} ${this.rpxToPx(fontSize)}px sans-serif`;
-        this.ctx.setTextBaseline("middle");
+        this.ctx.setTextBaseline('middle');
         this.ctx.setTextAlign(textAlign);
         this.ctx.fillText(text, this.rpxToPx(x), this.rpxToPx(y + lineHeight / 2));
         this.ctx.closePath();
         this.ctx.restore();
+        if (textDecoration === 'line-through') {
+            this.ctx.save();
+            this.ctx.beginPath();
+            this.ctx.font = `normal ${fontWeight} ${this.rpxToPx(fontSize)}px sans-serif`;
+            const { width } = this.ctx.measureText(text);
+            this.ctx.setStrokeStyle(color);
+            this.ctx.setLineWidth(1);
+            this.ctx.moveTo(this.rpxToPx(x), this.rpxToPx(y + lineHeight / 2));
+            this.ctx.lineTo(this.rpxToPx(x) + width, this.rpxToPx(y + lineHeight / 2));
+            this.ctx.closePath();
+            this.ctx.stroke();
+            this.ctx.restore();
+        }
     }
     /** 绘制二维码
      *
@@ -194,7 +207,7 @@ class CanvasHelper {
                     bytesCount -= byte;
                     strArr.pop();
                 }
-                strArr.push("...");
+                strArr.push('...');
             }
             else {
                 if (bytesCount + length > maxByteLength) {
@@ -204,9 +217,9 @@ class CanvasHelper {
                             bytesCount -= byte;
                             strArr.pop();
                         }
-                        strArr.push("...");
+                        strArr.push('...');
                     }
-                    textArr.push(strArr.join(""));
+                    textArr.push(strArr.join(''));
                     bytesCount = 0;
                     strArr = [];
                     i--;
@@ -215,7 +228,7 @@ class CanvasHelper {
                     strArr.push(str[i]);
                     bytesCount += length;
                     if (i === str.length - 1) {
-                        textArr.push(strArr.join(""));
+                        textArr.push(strArr.join(''));
                     }
                 }
             }

@@ -1,4 +1,4 @@
-import { CanvasContext } from "@tarojs/taro";
+import { CanvasContext } from '@tarojs/taro';
 interface IProps {
     ctx: CanvasContext;
 }
@@ -79,15 +79,16 @@ declare class CanvasHelper {
      * @param textAlign 对齐方式
      *
      */
-    initText({ color, fontSize, fontWeight, lineHeight, x, y, text, textAlign, }: {
+    initText({ color, fontSize, fontWeight, lineHeight, x, y, text, textAlign, textDecoration, }: {
         color: string;
         fontSize: number;
         lineHeight?: number;
-        fontWeight?: "normal" | "bold";
-        textAlign?: "left" | "center" | "right";
+        fontWeight?: 'normal' | 'bold';
+        textAlign?: 'left' | 'center' | 'right';
         text: string;
         x: number;
         y: number;
+        textDecoration?: 'line-through' | 'none';
     }): void;
     /** 绘制二维码
      *

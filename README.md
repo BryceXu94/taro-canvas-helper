@@ -135,6 +135,7 @@ helper.initText({
 | y          | number<必填>                                   | y 轴起点 |
 | text       | number<必填>                                   | 内容     |
 | textAlign  | 'left'\|'center'\|'right'<非必填，默认值 left> | 对齐方式 |
+| textDecoration  | 'line-through'\|'none'<非必填，默认值 none> | 文本修饰 |
 
 ### breakText
 
