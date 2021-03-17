@@ -61,6 +61,8 @@ helper.drawImage({
 | width  | number<必填>                         | 绘制宽度                                                 |
 | height | number<必填>                         | 绘制高度                                                 |
 | radius | number\|number[]<非必填，默认值为 0> | 圆角                                                     |
+| hMode | 'center'\| 'left'\|'right'<非必填，默认值为 center> | 水平方向对齐方式                                 |
+| vMode | 'center' \| 'top' \| 'bottom'<非必填，默认值为 center> | 垂直方向对齐方式                              |
 
 ### loadImage
 

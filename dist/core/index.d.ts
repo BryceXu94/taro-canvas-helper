@@ -6,35 +6,39 @@ declare class CanvasHelper {
     scale: number;
     ctx: any;
     constructor(props: IProps);
-    init(): Promise<void>;
-    rpxToPx(num: number): number;
+    private init;
+    private rpxToPx;
     /** 批量加载图片
      *
      * @param imgs 图片链接列表
      */
-    loadImgs(imgs: string[]): Promise<string[]>;
+    private loadImgs;
     /** 加载图片
      *
      * @param src 图片链接
      */
-    loadImage(src: string): Promise<string>;
+    private loadImage;
     /** 绘制图片
      *
-     * @param url 图片读取后的本地链接
+     * @param url 图片链接
      * @param x x轴起点
      * @param y y轴起点
      * @param width 图片宽度
      * @param height 图片宽度
      * @param radius 圆角
+     * @param hMode 水平方向对齐方式
+     * @param vMode 垂直方向对齐方式
      */
-    drawImage({ url, x, y, width, height, radius, }: {
+    drawImage({ url, x, y, width, height, radius, hMode, vMode, }: {
         url: string;
         x: number;
         y: number;
         width: number;
         height: number;
         radius?: number | number[];
-    }): void;
+        hMode?: 'center' | 'left' | 'right';
+        vMode?: 'center' | 'top' | 'bottom';
+    }): Promise<void>;
     /** 绘制矩形
      *
      * @param bgColor 背景颜色
