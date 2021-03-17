@@ -64,30 +64,6 @@ helper.drawImage({
 | hMode | 'center'\| 'left'\|'right'<非必填，默认值为 center> | 水平方向对齐方式                                 |
 | vMode | 'center' \| 'top' \| 'bottom'<非必填，默认值为 center> | 垂直方向对齐方式                              |
 
-### loadImage
-
-#### 功能：加载单张图片
-
-``` jsx
-const path=await helper.loadImage(url)
-```
-
-| 参数名 | 类型          | 介绍     |
-| ------ | ------------- | -------- |
-| url    | string <必填> | 图片地址 |
-
-### loadImgs
-
-#### 功能：加载多张图片
-
-``` jsx
-const imgs=await helper.loadImgs([])
-```
-
-| 参数名 | 类型            | 介绍         |
-| ------ | --------------- | ------------ |
-| urls   | string[] <必填> | 图片地址数组 |
-
 ### drawRect
 
 #### 功能：绘制矩形
