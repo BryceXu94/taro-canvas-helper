@@ -1,6 +1,6 @@
 {
   "name": "taro-canvas-helper",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "基于Taro2.x的canvas绘制工具",
   "main": "dist/core/index.js",
   "types": "dist/core/index.d.ts",
