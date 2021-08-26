@@ -12,12 +12,22 @@ declare class CanvasHelper {
      *
      * @param imgs 图片链接列表
      */
-    private loadImgs;
+    loadImgs(imgs: string[]): Promise<{
+        status: 1 | 0;
+        url: string;
+        width: number;
+        height: number;
+    }[]>;
     /** 加载图片
      *
      * @param src 图片链接
      */
-    private loadImage;
+    loadImage(src: string): Promise<{
+        status: 1 | 0;
+        url: string;
+        width: number;
+        height: number;
+    }>;
     /** 绘制图片
      *
      * @param url 图片链接
