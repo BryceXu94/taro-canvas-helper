@@ -1,4 +1,5 @@
 import { CanvasContext } from '@tarojs/taro';
+
 interface IProps {
     ctx: CanvasContext;
 }
@@ -12,22 +13,12 @@ declare class CanvasHelper {
      *
      * @param imgs 图片链接列表
      */
-    loadImgs(imgs: string[]): Promise<{
-        status: 1 | 0;
-        url: string;
-        width: number;
-        height: number;
-    }[]>;
+    private loadImgs;
     /** 加载图片
      *
      * @param src 图片链接
      */
-    loadImage(src: string): Promise<{
-        status: 1 | 0;
-        url: string;
-        width: number;
-        height: number;
-    }>;
+    private loadImage;
     /** 绘制图片
      *
      * @param url 图片链接
