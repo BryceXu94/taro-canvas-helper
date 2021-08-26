@@ -1,5 +1,4 @@
 import { CanvasContext } from '@tarojs/taro';
-
 interface IProps {
     ctx: CanvasContext;
 }
