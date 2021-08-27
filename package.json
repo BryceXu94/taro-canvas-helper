@@ -3,7 +3,7 @@
   "version": "1.0.14",
   "description": "基于Taro2.x的canvas绘制工具",
   "main": "dist/core/index.js",
-  "types": "dist/core/index.d.ts",
+  "types": "dist/core/type.d.ts",
   "keywords": [
     "taro微信小程序",
     "canvas绘制工具"
