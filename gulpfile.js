@@ -1,9 +1,9 @@
 const { task, src, dest, parallel } = require('gulp')
 const uglify = require('gulp-uglify')
 task('uglify', async function (done) {
-  await src(`dist/core/*.js`)
+  await src(`dist/*.js`)
     .pipe(uglify()) // 压缩js代码
-    .pipe(dest('dist/core'))
+    .pipe(dest('dist'))
   done()
 })
 task(
